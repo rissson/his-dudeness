@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0734b685-e0ef-4a38-8e85-13262f0b56be" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crédits Platypus.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/backgrounds/background_walter.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/graphalama/assets/logs/logs.md" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/coins.png" afterPath="$PROJECT_DIR$/assets/coins.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/his-dudeness.png" afterPath="$PROJECT_DIR$/assets/his-dudeness.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/players/his-dudeness.png" afterPath="$PROJECT_DIR$/assets/players/his-dudeness.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/his-dudeness.iml" afterPath="$PROJECT_DIR$/.idea/his-dudeness.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coins.py" afterPath="$PROJECT_DIR$/coins.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graphalama/__init__.py" afterPath="$PROJECT_DIR$/graphalama/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/params.py" afterPath="$PROJECT_DIR$/params.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/platypus.py" afterPath="$PROJECT_DIR$/player.py" />
-    </list>
+    <list default="true" id="0734b685-e0ef-4a38-8e85-13262f0b56be" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
