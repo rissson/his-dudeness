@@ -14,7 +14,7 @@ DOWN_RIGHT = 0
 DOWN_LEFT = 0
 
 
-class Platypus:
+class Player:
     def __init__(self, x, y, screensize):
         self.x = x
         self.y = y

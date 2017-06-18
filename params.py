@@ -8,7 +8,7 @@ from graphalama.color import get_rainbow
 class ParamsScreen:
     def __init__(self):
         self.timestamp = time.time()
-        background_states = [{'txt': 'Walter', 'clr': RED, 'value': 'background_walter.png'},
+        background_states = [{'txt': 'Walter', 'clr': RED, 'value': 'background_walter.jpg'},
                              {'txt': 'Astronaut', 'clr': GREY_BLUE, 'value': 'background_astronaut.jpg'},
                              {'txt': 'Autumn', 'clr': ORANGE, 'value': 'background_autumn.jpg'},
                              {'txt': 'Over the clouds', 'clr': L_YELLOW, 'value': 'background_clouds.jpg'},

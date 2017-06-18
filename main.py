@@ -1,21 +1,17 @@
-import shutil
 from graphalama import Borg
 from graphalama import Inputs, screen
 from graphalama.fonts import Font, Calibri
 from graphalama.text import Text
 from graphalama.CONSTANTS import *
 import pygame
-from platypus import Platypus
+from player import Player
 from coins import Coins
 from graphalama.color import get_rainbow
 from params import ParamsScreen, Params
 borg_baby = Borg()
 
-__version__ = '0.2'
+__version__ = '0.3'
 borg_baby.version = __version__
-
-
-# TODO : see Issues at https://gitlab.com/cpc_challenge/platypus/issues
 
 
 def main():
@@ -27,13 +23,13 @@ def main():
     screen.wait_party(borg_baby.display)
     borg_baby.inputs = Inputs()
 
-    fps = 60
+    fps = 30
     clock = pygame.time.Clock()
 
     initial_screen = True
 
     in_game = False
-    platypus = Platypus(50, 50, borg_baby.SCREEN_SIZE)
+    his_dudeness = Player(50, 50, borg_baby.SCREEN_SIZE)
     coins = Coins()
 
     params_screen = ParamsScreen()
@@ -43,12 +39,11 @@ def main():
                                         borg_baby.SCREEN_SIZE)
 
     while not (borg_baby.inputs['alt']['is pressed'] and borg_baby.inputs['F4']['is pressed'])\
-            and not borg_baby.inputs['close']['is pressed']:
+            and not borg_baby.inputs['close']['is pressed'] or borg_baby.inputs['escape']['is pressed']:
         borg_baby.display.blit(background, (0, 0))
 
         screen.resize(borg_baby.display, borg_baby.inputs)
         borg_baby.inputs.update()
-
         if initial_screen:
             play_button = Text("Play", (0.4, 0.4, 0.2, 0.1, (0, 120, 255, 128), ROUNDED, 0.2),
                                Font(Calibri, 1), WHITE, ('cc', 0, 0))
@@ -73,9 +68,9 @@ def main():
                 tutorial = True
 
         elif in_game:
-            platypus.update(borg_baby.inputs)
-            coins.update((platypus.x + 40), (platypus.y + 30))
-            platypus.render(borg_baby.display)
+            his_dudeness.update(borg_baby.inputs)
+            coins.update((his_dudeness.x + 40), (his_dudeness.y + 30))
+            his_dudeness.render(borg_baby.display)
             coins.render(borg_baby.display)
         elif params:
             params_screen.render(borg_baby.display)
@@ -125,10 +120,9 @@ def main():
 
         pygame.display.flip()
 
-    platypus.quit()
+    his_dudeness.quit()
     coins.quit()
     Params.save()
-    shutil.rmtree('assets/logs')
 
 
 if __name__ == "__main__":

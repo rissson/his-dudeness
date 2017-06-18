@@ -19,7 +19,6 @@ from graphalama.fonts import Font
 from graphalama.inputs import Inputs
 from graphalama.maths import V2
 from graphalama.rectangle import Area, Rectangle
-from graphalama.logs import log
 
 # Easiest access
 from graphalama.CONSTANTS import *

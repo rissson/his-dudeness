@@ -52,6 +52,7 @@ class Coins:
         t = Timer(spawn_speed, self.coins_timer)
         t.setDaemon(t)
         t.start()
+        print("coin spawn")
         self.coins_list.append(Coin(borg_baby.SCREEN_SIZE))
 
     def save(self):
