@@ -8,7 +8,8 @@ from graphalama.color import get_rainbow
 class ParamsScreen:
     def __init__(self):
         self.timestamp = time.time()
-        background_states = [{'txt': 'Astronaut', 'clr': GREY_BLUE, 'value': 'background_astronaut.jpg'},
+        background_states = [{'txt': 'Walter', 'clr': RED, 'value': 'background_walter.png'},
+                             {'txt': 'Astronaut', 'clr': GREY_BLUE, 'value': 'background_astronaut.jpg'},
                              {'txt': 'Autumn', 'clr': ORANGE, 'value': 'background_autumn.jpg'},
                              {'txt': 'Over the clouds', 'clr': L_YELLOW, 'value': 'background_clouds.jpg'},
                              {'txt': 'Lake & Mountains', 'clr': L_BLUE, 'value': 'background_mountains.jpg'},
@@ -20,7 +21,7 @@ class ParamsScreen:
         self.background_button = StatesButton(0.42, 0.3, 0.15, 'Background', background_states, WHITE + (128,))
         self.background_button.go_to_value(Params.background)  # we go at the saved value
 
-        player_states = [{'txt': 'Platypus', 'clr': BLUE, 'value': 'platypus.png'},
+        player_states = [{'txt': 'Platypus', 'clr': BLUE, 'value': 'his-dudeness.png'},
                          {'txt': 'Llama', 'clr': get_rainbow(1), 'value': 'llama.png'}]
         self.player_button = StatesButton(0.42, 0.6, 0.15, 'Character', player_states, WHITE + (128,), hint='Reboot'
                                                                                                             ' needed')
@@ -44,8 +45,8 @@ class ParamsScreen:
 class Params:
 
     all_params = dict()
-    background = 'background_clouds.jpg'
-    player = 'platypus.png'
+    background = 'background_walter.jpg'
+    player = 'his-dudeness.png'
 
     @classmethod
     def save(cls):

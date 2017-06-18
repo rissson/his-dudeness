@@ -23,7 +23,7 @@ def main():
     pygame.key.set_repeat(50, 5)
     Params.load()
 
-    borg_baby.display = screen.new_display("Platypus", full_screen=True, icon_path="assets/platypus.png")
+    borg_baby.display = screen.new_display("His Dudeness", full_screen=True, icon_path="assets/his-dudeness.png")
     screen.wait_party(borg_baby.display)
     borg_baby.inputs = Inputs()
 
