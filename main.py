@@ -34,7 +34,6 @@ def main():
 
     params_screen = ParamsScreen()
     params = False
-    tutorial = False
     background = pygame.transform.scale(pygame.image.load("assets/backgrounds/" + Params.background).convert(),
                                         borg_baby.SCREEN_SIZE)
 
@@ -50,22 +49,11 @@ def main():
             play_button.render()
             borg_baby.display.blit(play_button, play_button.real_topleft)
 
-            tuto_button = Text("Tutorial", (0.2, 0.7, 0.2, 0.1, (0, 120, 255, 128), ROUNDED, 0.2),
-                               Font(Calibri, 1), WHITE, ('cc', 0, 0))
-            tuto_button.render()
-            borg_baby.display.blit(tuto_button, tuto_button.real_topleft)
-
             if play_button.mouse_click_area(1):
                 initial_screen = False
                 in_game = True
                 coins.coins_timer()
                 params = False
-                tutorial = False
-            elif tuto_button.mouse_click_area(1):
-                initial_screen = False
-                in_game = False
-                params = False
-                tutorial = True
 
         elif in_game:
             his_dudeness.update(borg_baby.inputs)
@@ -81,17 +69,6 @@ def main():
                 initial_screen = True
                 in_game = False
                 params = False
-                tutorial = False
-        elif tutorial:
-            tutorial_img = pygame.transform.scale(pygame.image.load("assets/tutorial.jpg").convert(),
-                                                  borg_baby.SCREEN_SIZE)
-            borg_baby.display.blit(tutorial_img, (0, 0))
-            if borg_baby.inputs['enter']['is pressed'] or borg_baby.inputs['space bar']['is pressed']:
-                initial_screen = True
-                in_game = False
-                params = False
-                tutorial = False
-                screen.wait_party(borg_baby.display)
 
         params_screen.update(borg_baby.inputs)
 
@@ -109,15 +86,8 @@ def main():
             initial_screen = False
             in_game = False
             params = True
-            tutorial = False
 
         clock.tick(fps)
-
-        fps_text = Text(str(round(clock.get_fps())), (0, -20, 50, 20, (0, 0, 0, 128)),
-                        Font(Calibri, 1), GREEN, ('tl', 0, 0))
-        fps_text.render()
-        borg_baby.display.blit(fps_text, fps_text.real_topleft)
-
         pygame.display.flip()
 
     his_dudeness.quit()

@@ -50,7 +50,7 @@ class Params:
 
     @classmethod
     def save(cls):
-        with open('assets/params.set', 'wb') as file:
+        with open('save/params.set', 'wb') as file:
             cls.all_params['background'] = cls.background
             cls.all_params['player'] = cls.player
             pickle.dump(cls.all_params, file)
@@ -58,13 +58,13 @@ class Params:
     @classmethod
     def load(cls):
         try:
-            with open('assets/params.set', 'rb') as file:
+            with open('save/params.set', 'rb') as file:
                 cls.all_params = pickle.load(file)
                 cls.background = cls.all_params['background']
                 cls.player = cls.all_params['player']
 
         except KeyError:  # TODO : add other errors
-            print('KeyError in params.set : Loading default params.')
+            print('KeyError in save/params.set : Loading default params.')
             # keep the default
         except FileNotFoundError:
-            print('FileNotFoundError for params.set : Loading default params.')
+            print('FileNotFoundError for save/params.set : Loading default params.')

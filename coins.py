@@ -9,7 +9,7 @@ borg_baby = Borg()
 
 class Coins:
     def __init__(self):
-        self.image = pygame.transform.scale(pygame.image.load("assets/coins.png"), (30, 40)).convert_alpha()
+        self.image = pygame.transform.scale(pygame.image.load("assets/coin.png"), (30, 40)).convert_alpha()
         self.coins_list = []
         borg_baby.score = 0
         self.all = dict()
@@ -20,15 +20,15 @@ class Coins:
 
     def load(self):
         try:
-            with open('assets/score.set', 'rb') as file:
+            with open('save/score.set', 'rb') as file:
                 self.all = pickle.load(file)
                 self.coins_list = self.all['coins_list']
                 borg_baby.score = self.all['collected']
 
         except KeyError:  # TODO : add other errors
-            print('KeyError in score.set : Loading default scores.')
+            print('KeyError in save/score.set : Loading default scores.')
         except FileNotFoundError:
-            print('FileNotFoundError for score.set : Loading default scores.')
+            print('FileNotFoundError for save/score.set : Loading default scores.')
 
     def update(self, x, y):
         for coin in self.coins_list:
@@ -56,7 +56,7 @@ class Coins:
         self.coins_list.append(Coin(borg_baby.SCREEN_SIZE))
 
     def save(self):
-        with open('assets/score.set', 'wb') as file:
+        with open('save/score.set', 'wb') as file:
             self.all['coins_list'] = self.coins_list
             self.all['collected'] = borg_baby.score
             pickle.dump(self.all, file)
