@@ -1,5 +1,7 @@
 # project related
 save/
+src/
+assets/config.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
